@@ -19,7 +19,7 @@
     "fastclick": "^1.0.6",
     "iscroll": "^5.2.0",
     "jsonp": "^0.2.1",
-    "mysql": "^2.13.0",
+    "mysql": "mysqljs/mysql",
     "socket.io": "^2.0.3",
     "urllib": "^2.22.0",
     "vue": "^2.3.3",

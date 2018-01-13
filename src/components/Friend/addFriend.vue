@@ -91,7 +91,7 @@ export default {
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" type="text/css">
+<style scoped lang="scss" type="text/scss">
 .wrapper{
   background:#FFFDFD;
 }

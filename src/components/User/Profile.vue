@@ -125,7 +125,7 @@ export default {
     }
   },
   created(){
-    this.dataList.user_id=this.$route.params.user_id
+    this.dataList.user_id=this.$route.params.user_id;
     this.getUserProfile(this.userId,this.dataList.user_id)
   }, 
   methods:{
@@ -134,17 +134,17 @@ export default {
     },
     async getUserProfile(userId,targetUserId){
       if(this.isMySelf){
-        this.dataList=this.userInfo
+        this.dataList=this.userInfo;
         return
       }
-      const {data} = await get_user_profile(userId,targetUserId)
+      const {data} = await get_user_profile(userId,targetUserId);
       this.dataList = data
     }
   }
 }
 </script>
 
-<style scoped lang="scss" type="text/css">
+<style scoped lang="scss" type="text/scss">
 .wrapper{
 	background:#fff !important;
 }

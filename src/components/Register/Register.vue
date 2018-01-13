@@ -175,9 +175,9 @@ export default {
     //[第二页] 展示第二页
     showSecondPage(){
       if(this.isEnable){
-        this.showPage=2 //展示第二页
-        this.sendMessage()  //发送验证码到用户的手机
-        this.startInterval()
+        this.showPage=2; //展示第二页
+        this.sendMessage();  //发送验证码到用户的手机
+        this.startInterval();
         //下面必须要有个延时,因为v-show切换是要时间的，在还没有显示出来时firstNum是
         //获取不到焦点的
         setTimeout(()=>{
@@ -187,7 +187,7 @@ export default {
     },
     //[第二页] 数字框自动获得焦点
     autoFocus(index){
-      const value=this.inputValue[index]
+      const value=this.inputValue[index];
       if(value!=''){
         index==0?this.$refs.secondNum.focus():
         index==1?this.$refs.thirdNum.focus():
@@ -204,11 +204,11 @@ export default {
     },
     //[第二页] 开始计时
     startInterval(){
-      this.time=60
+      this.time=60;
       const interval=setInterval(()=>{
-          this.time--
+          this.time--;
           if(this.time==0||this.showPage==1||this.showPage==3){
-            clearInterval(interval)
+            clearInterval(interval);
             this.time=0
           }
       },1000) 
@@ -216,18 +216,18 @@ export default {
     //[第二页] 超时再次发送验证码到用户的手机
     reSend(){
       if(this.time==0){
-        this.clearCode()
-        this.sendMessage()
+        this.clearCode();
+        this.sendMessage();
         this.startInterval()
       }
     },
     //清空所填的验证码
     clearCode(){
-      this.code.firstNum='',
-      this.code.secondNum=''
-      this.code.thirdNum=''
-      this.code.fourthNum=''
-      this.code.fiveNum=''
+      this.code.firstNum='';
+      this.code.secondNum='';
+      this.code.thirdNum='';
+      this.code.fourthNum='';
+      this.code.fiveNum='';
       this.code.sixNum=''
     },
     //[第二页] 发送验证码到用户的手机
@@ -237,11 +237,11 @@ export default {
     //[第二页] 验证用户填写的验证码
     async validate(validateCode){
        if(this.time==0||validateCode.length!=6){
-          this.$store.dispatch('setShowWarn','验证码错误,请重新发送短信验证')
+          this.$store.dispatch('setShowWarn','验证码错误,请重新发送短信验证');
           return
        }
        //验证
-       const {code} = await validate({code:validateCode})
+       const {code} = await validate({code:validateCode});
        if(code==1){
           this.showThirdPage()
        }else{
@@ -250,7 +250,7 @@ export default {
     },
     // [第三页] 显示第三页
     showThirdPage(){
-      this.showPage=3
+      this.showPage=3;
       setTimeout(()=>{
          this.$refs.nickname.focus()
       },0)
@@ -265,10 +265,10 @@ export default {
         const data={
           'phone':this.phone,
           'nickname':this.nickname
-        }
-        const res=await register(data)
+        };
+        const res=await register(data);
         if(res.code==1){
-           this.qq=res.data.qq
+           this.qq=res.data.qq;
            this.showFourthPage()
         }
       }
@@ -326,7 +326,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" type="text/css">
+<style scoped lang="scss" type="text/scss">
 .wrapper{
   background:#fff !important;
 }

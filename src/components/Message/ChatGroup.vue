@@ -228,174 +228,177 @@ export default {
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" type="text/css">
-#wrapper{
-   background:#EFEFEF !important;
-   bottom:70px !important
-}
-.header{
-	  display:flex;
-    padding:0 20px;
-    height:50px;
-    line-height:50px;
-    background: #1E90FF;
-    color: white;
-    font-size:18px;
-    position:absolute;
-    top:0;
-    width:100%;
-    z-index:3;
-    .item{
-    	flex:1;
-        &.left{
-            background:url(/static/icon/4/flc.png) no-repeat left center;
-            margin-left:-10px;
-            padding-left:20px;
-            background-size:26px 26px;
-            cursor:pointer;
-        }
-        &.center{
-            text-align:center;
-            span{
-              display:block;
-              letter-spacing:2px;
-              line-height:26px;
-              font-size:16px;
-              overflow:hidden;
-              margin:0 auto;
-              width:240px;
-              text-overflow:ellipsis; /*当文本溢出时显示省略标记(...)*/
-              white-space:nowrap; /*不换行*/
+<style scoped lang="scss" type="text/scss">
+    #wrapper {
+        background: #EFEFEF !important;
+        bottom: 70px !important
+    }
+
+    .header {
+        display: flex;
+        padding: 0 20px;
+        height: 50px;
+        line-height: 50px;
+        background: #1E90FF;
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+        .item {
+            flex: 1;
+            &.left {
+                background: url(/static/icon/4/flc.png) no-repeat left center;
+                margin-left: -10px;
+                padding-left: 20px;
+                background-size: 26px 26px;
+                cursor: pointer;
+            }
+            &.center {
+                text-align: center;
+                span {
+                    display: block;
+                    letter-spacing: 2px;
+                    line-height: 26px;
+                    font-size: 16px;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    width: 240px;
+                    text-overflow: ellipsis; /*当文本溢出时显示省略标记(...)*/
+                    white-space: nowrap; /*不换行*/
+                }
+            }
+            &.right {
+                text-align: right;
+                cursor: pointer;
+                position: relative;
+                left: 20px;
+                img {
+                    transform: scale(0.5)
+                }
             }
         }
-        &.right{
-            text-align:right;
-            cursor:pointer;
-            position:relative;
-            left:20px;
-            img{
-               transform:scale(0.5)
+    }
+
+    .chat {
+        cursor: pointer;
+        ul {
+            width: 100%;
+            li {
+                padding: 6px 10px;
+                img {
+                    border-radius: 50%;
+                    width: 46px;
+                    height: 46px;
+                }
+                p.message {
+                    min-height: 40px;
+                    line-height: 30px;
+                    max-width: 56%;
+                    display: inline-block;
+                    border-radius: 10px;
+                    padding: 6px 10px;
+                    margin-top: 10px;
+                    text-align: left;
+                    word-break: break-all;
+                }
+                p.name {
+                    color: #666;
+                    font-size: 14px;
+                    position: relative;
+                }
+            }
+            li.time {
+                height: 40px;
+                line-height: 40px;
+                font-size: 14px;
+                color: #666;
+                text-align: center;
+            }
+            li.me {
+                text-align: right;
+                overflow: hidden;
+                img {
+                    float: right;
+                }
+                p.message {
+                    margin-right: 10px;
+                    background: #1E90FF;
+                    color: #fff;
+                }
+                p.name {
+                    right: 14px;
+                }
+            }
+            li.other {
+                text-align: left;
+                overflow: hidden;
+                img {
+                    float: left;
+                }
+                p.message {
+                    margin-left: 10px;
+                    background: #fff;
+                    color: #000;
+                }
+                p.name {
+                    left: 14px;
+                }
             }
         }
     }
-}
-.chat {
-	cursor:pointer;
-    ul{
-	    width:100%;   
-	    li{  
-	      padding:6px 10px;
-	      img{
-	      	border-radius:50%;
-	      	width:46px;
-	      	height:46px;
-	      }
-	      p.message{
-	      	min-height:40px;
-	      	line-height:30px;
-	        max-width:56%;
-	      	display:inline-block;
-	      	border-radius:10px;
-	      	padding:6px 10px;
-	      	margin-top:10px;
-	      	text-align:left;
-          word-break: break-all; 
-	      }
-	      p.name{
-	      	color:#666;
-	      	font-size:14px;
-	      	position:relative;
-	      }
-	    }
-	    li.time{
-	       height:40px;
-	       line-height:40px;
-	       font-size:14px;
-	       color:#666;
-	       text-align:center;
-	    }
-	    li.me{
-	    	text-align:right;
-	    	overflow:hidden;
-	    	img{
-	    		float:right;
-	    	}
-	    	p.message{
-	    		margin-right:10px;
-	    		background:#1E90FF;
-	    		color:#fff;
-	    	}
-	    	p.name{
-	    	    right:14px;
-	    	}
-	    }
-	    li.other{
-	    	text-align:left;
-	    	overflow:hidden;
-	    	img{
-	    		float:left;
-	    	}
-	    	p.message{
-	    		margin-left:10px;
-	    		background:#fff;
-	    		color:#000;
-	    	}
-	    	p.name{
-	    	    left:14px;
-	    	}
-	    }
+
+    .footer {
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        bottom: 0;
+        background: #eee;
+        .writeMessage {
+            height: 32px;
+            display: flex;
+            textarea {
+                width: 80%;
+                margin: 0 6px;
+                padding-left: 6px;
+                border-radius: 2px;
+                outline: none;
+                resize: none;
+                border: none;
+                overflow-y: hidden;
+                font-size: 14px;
+                font-family: 'Microsoft Yahei';
+            }
+            button.btn {
+                height: 100%;
+                width: 16%;
+                background: #ccc;
+                color: white;
+                border-radius: 2px;
+                cursor: not-allowed;
+                font-family: 'Microsoft Yahei';
+                &.enable {
+                    background: #1E90FF;
+                    cursor: pointer;
+                }
+            }
+        }
+        .other {
+            display: flex;
+            background: #eee;
+            .item {
+                height: 100%;
+                flex: 1;
+                text-align: center;
+                line-height: 32px;
+                img {
+                    width: 32px;
+                    height: 32px;
+                    margin-top: 4px;
+                    cursor: pointer;
+                }
+            }
+        }
     }
-}
-.footer{
-	width:100%;
-	height:70px;
-	position:absolute;
-	bottom:0;
-	background:#eee;
-	.writeMessage{
-		height:32px;
-		display:flex;
-    textarea{
-      width:80%;
-      margin:0 6px;
-      padding-left:6px;
-      border-radius:2px;
-      outline:none;
-      resize:none;
-      border:none;
-      overflow-y:hidden;
-      font-size:14px;
-      font-family:'Microsoft Yahei';
-    }
-		button.btn{
-			height:100%;
-			width:16%;
-			background:#ccc;
-			color:white;
-			border-radius:2px;
-			cursor:not-allowed;
-      font-family:'Microsoft Yahei';
-			&.enable{
-				background:#1E90FF;
-				cursor:pointer;
-			}
-		}
-	}
-	.other{
-		display:flex;
-		background:#eee;
-		.item{
-			height:100%;
-			flex:1;
-			text-align:center;
-      line-height:32px;
-			img{
-				width:32px;
-				height:32px;	
-				margin-top:4px;
-				cursor:pointer;
-			}
-		}
-	}
-}
 </style>

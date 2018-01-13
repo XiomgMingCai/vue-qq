@@ -1,7 +1,8 @@
 import express from 'express'
 import login from '../../controller/login'
 
-const loginRouter = express.Router()
+const loginRouter
+	= express.Router()
 
 loginRouter
 	.get('/:user/:pwd', async(req, res) => { // 登录

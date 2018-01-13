@@ -265,7 +265,7 @@ export default {
       this.$store.commit('TAB_INDEX',tabIndex)
     },
     toggle(index,type){  //通过数据来控制展开和收缩,实现图片懒加载
-      this.isHeightChange= this.isHeightChange?false:true  //触发Scroll刷新
+      this.isHeightChange= this.isHeightChange?false:true;  //触发Scroll刷新
       if(type==1){
         this.status.friend[index]=this.status.friend[index]==0?1:0
       }else if(type==2){
@@ -283,7 +283,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" type="text/css">
+<style scoped lang="scss" type="text/scss">
 /*主页面*/
 #wrapper{
    cursor:pointer;

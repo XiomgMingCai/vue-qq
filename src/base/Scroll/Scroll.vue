@@ -43,8 +43,8 @@ export default {
     position(){    //获取state里滚动条的位置
       const index=this.scrollPosition.findIndex((item)=>{
         return item.name==this.component
-      })
-      const pos = (this.scrollPosition)[index].pos
+      });
+      const pos = (this.scrollPosition)[index].pos;
 
       return typeof pos ==='number' ? pos : pos[this.tabIndex-1]
     }
@@ -59,9 +59,9 @@ export default {
     initScroll(){
       this.scroll = new IScroll('#wrapper',{
         click:true
-      })
+      });
       //滚动条滚动到指定位置
-      this.scrollToPosition()
+      this.scrollToPosition();
 
       //滚动结束时记录滚动位置到store里
       this.savePosition()
@@ -79,7 +79,7 @@ export default {
     },
     savePosition(){
       //滚动结束时记录滚动位置到store里
-      const vm=this
+      const vm=this;
       this.scroll.on('scrollEnd',function(){
         vm.$store.commit('SAVE_SCROLL_POSITION',{
            component:vm.component,
@@ -92,7 +92,7 @@ export default {
       //这里必须要有个延时，因为重绘页面需要时间
       setTimeout(()=>{ 
         if(this.scroll){
-          this.scroll.refresh()
+          this.scroll.refresh();
           this.isScrollToBottom && this.scroll.scrollTo(0,this.scroll.maxScrollY,200)
         }
       }, 0)
@@ -109,7 +109,7 @@ export default {
 }
 </script>
 
-<style lang="scss" type="text/css">
+<style lang="scss" type="text/scss">
 #wrapper {
   position:absolute;
   z-index:1;

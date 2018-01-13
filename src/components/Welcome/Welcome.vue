@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" type="text/css">
+<style scoped lang="scss" type="text/scss">
 .wrapper{
   background:#fff !important;
 }
@@ -42,7 +42,7 @@ export default {
     a{
       flex:1;
       margin:6px;
-      line-height: 32px; 
+      line-height: 32px;
       color: white;
       border-radius: 2px;
       letter-spacing: 2px;
