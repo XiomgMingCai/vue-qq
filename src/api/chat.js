@@ -2,7 +2,7 @@ import {
 	request_get,
 	request_post,
 	request_put
-} from '@/common/js/request'
+} from '../common/js/request'
 
 const API_CONFIG = '/api/chat'
 

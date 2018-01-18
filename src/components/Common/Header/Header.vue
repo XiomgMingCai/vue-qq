@@ -9,15 +9,15 @@
 
 <script>
 export default {
-  name: 'head',
+  name: 'v-head',
   props:['currentTab'],
   data(){
     return{
       'style':{
-        'background':`url(${this.$store.state.userInfo.face}) 
+        'background':`url(${this.$store.state.userInfo.face})
           no-repeat center center`,
         'backgroundSize':'40px'
-      } 
+      }
     }
   },
   computed:{

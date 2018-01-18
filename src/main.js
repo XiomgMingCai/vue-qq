@@ -9,7 +9,12 @@ import FastClick from 'fastclick'
 import vueg from 'vueg'
 import 'vueg/css/transition-min.css'
 
-Vue.config.productionTip = false
+// axios.defaults.timeout = 5000;
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+// axios.defaults.baseURL = 'http://www.xxxx.xxx/api';
+// axios.defaults.withCredentials= true;
+
+Vue.config.productionTip = false;
 
 // 用 axios 进行 Ajax 请求
 Vue.use(VueAxios, axios)
